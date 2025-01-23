@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+venv/
+*.pyc
+*.spec
+
+# PyInstaller
+build/
+dist/
+app.spec
+
+# Project-specific
+uploads/*
+!uploads/.gitkeep  # Keep the folder structure
+debug_original.jpg
+debug_processed.jpg
+.env
+
+# Optional IDE/Editor files (add if needed)
+.vscode/
+.idea/
+*.swp

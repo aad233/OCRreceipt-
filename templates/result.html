@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OCR Results</title>
+    <style>
+        .result-table {
+            border-collapse: collapse;
+            margin: 20px 0;
+            width: 100%;
+            max-width: 600px;
+        }
+        .result-table td, .result-table th {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        .result-table th {
+            background-color: #f8f9fa;
+            width: 30%;
+        }
+        .raw-text {
+            white-space: pre-wrap;
+            font-family: monospace;
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin: 20px 0;
+            background-color: #f8f9fa;
+        }
+        img {
+            border: 1px solid #ddd;
+            padding: 5px;
+            margin-bottom: 20px;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>OCR Results</h1>
+    {% if image_path %}
+        <img src="{{ url_for('static', filename=image_path) }}" width="300">
+    {% endif %}
+    
+    <h2>Parsed Information</h2>
+    <table class="result-table">
+        <tr>
+            <th>Address</th>
+            <td>{{ parsed_data.address }}</td>
+        </tr>
+        <tr>
+            <th>Postal Code</th>
+            <td>{{ parsed_data.postal_code }}</td>
+        </tr>
+        <tr>
+            <th>City</th>
+            <td>{{ parsed_data.city }}</td>
+        </tr>
+        <tr>
+            <th>Phone</th>
+            <td>{{ parsed_data.phone }}</td>
+        </tr>
+    </table>
+    
+    <h2>Raw OCR Text</h2>
+    <div class="raw-text">{{ text }}</div>
+    
+    <a href="/">← Upload another receipt</a>
+</body>
+</html>

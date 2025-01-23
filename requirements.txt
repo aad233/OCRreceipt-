@@ -1,0 +1,6 @@
+flask>=2.0.1
+paddleocr>=2.6.1
+paddlepaddle>=2.4.0
+opencv-python>=4.5.5
+numpy>=1.21.0
+gunicorn>=20.1.0
